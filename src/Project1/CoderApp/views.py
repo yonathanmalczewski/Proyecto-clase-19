@@ -25,3 +25,6 @@ def read_students(request):
 
 def read_deliverables(request):
     return HttpResponse("View deliverables")
+
+def index(request):
+    return render(request, 'index.html')
