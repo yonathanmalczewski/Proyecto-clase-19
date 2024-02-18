@@ -37,7 +37,7 @@ class Courses(models.Model):
     
 class Deliverables(models.Model):
     nombre = models.CharField(max_length=20)
-    fechaDeEntrega = models.DateField()
+    fechaDeEntrega = models.DateField(verbose_name="Fecha de entrega")
     entregado = models.BooleanField()
 
     class Meta:
