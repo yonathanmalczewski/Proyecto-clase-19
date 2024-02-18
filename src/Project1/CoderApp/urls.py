@@ -1,10 +1,10 @@
 from django.urls import path
-from CoderApp.views import read_home, read_courses, read_teacher, read_students, read_deliverables
+from CoderApp.views import home, courses, teachers, students, deliverables
 
 urlpatterns = [
-    path('home/', read_home),
-    path('courses/', read_courses),
-    path('teachers/', read_teacher),
-    path('students/', read_students),
-    path('deliverables/', read_deliverables),
+    path('', home, name='home'),
+    path('courses/', courses, name='courses'),
+    path('teachers/', teachers, name='teachers'),
+    path('students/', students, name='students'),
+    path('deliverables/', deliverables, name='deliverables'),
 ]
