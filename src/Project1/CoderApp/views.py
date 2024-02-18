@@ -1,20 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from CoderApp.models import Teachers
+from CoderApp.models import Teachers, Students, Courses, Deliverables
 
-def read_home(request):
-    return HttpResponse("View home")
+def home(request):
+    return render(request, 'CoderApp/home.html')
 
-def read_courses(request):
+def courses(request):
     return render(request, 'CoderApp/courses.html')
 
-def read_teacher(request):
+def teachers(request):
+    return render(request, 'CoderApp/teachers.html')
+
+def read_teachers(request):
     print("View teacher") # Este recurso se usa para hacer debugs
     teacher = Teachers(nombre="John", apellido="Doe", email="doe@email.com")
     teacher.save()
-    return HttpResponse("Los datos del profesor se guardaron exitosamente.") 
+    return HttpResponse("Los datos del profesor se guardaron exitosamente.")
 
-def read_students(request):
+def students(request):
     context = {
         'nombre': 'Yonathan',
         'apellido': 'Malczewski',
@@ -23,8 +26,5 @@ def read_students(request):
     }
     return render(request, 'CoderApp/students.html', context)
 
-def read_deliverables(request):
-    return HttpResponse("View deliverables")
-
-def index(request):
-    return render(request, 'index.html')
+def deliverables(request):
+    return render(request, 'CoderApp/deliverables.html')

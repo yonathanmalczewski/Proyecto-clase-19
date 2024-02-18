@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students</title>
-</head>
-<body>
-    <h1>¡Hola, esto es una prueba por template!</h1>
-
-    <h2>Mi nombre es {{ nombre }} {{ apellido}}</h2>
+{% extends 'CoderApp/template-padre.html' %}
+{% load static %}
+{% block contenidoVariable %}
+    <h1>Información de la view students</h1>
+    <h1>Herencia de template-padre.html</h1>
+    <body>
+        <h2>¡Hola, esto es una prueba por template!</h2>
     
-    <h2>El estudiante está inscripto en los siguientes cursos:
-        {% for curso in cursos %}
-            <li>{{ curso }}</li>
-        {% endfor %}
-    </h2>
-</body>
-</html>
+        <h2>Mi nombre es {{ nombre }} {{ apellido}}</h2>
+        
+        <h2>El estudiante está inscripto en los siguientes cursos:
+            {% for curso in cursos %}
+                <li>{{ curso }}</li>
+            {% endfor %}
+        </h2>
+    </body>
+{% endblock %}
